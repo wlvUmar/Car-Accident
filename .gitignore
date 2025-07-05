@@ -1,0 +1,6 @@
+/utils/__pycache__
+/venv
+utils/xgb_full_pipeline.pkl
+pyrightconfig.json
+*.log
+*.pyc
