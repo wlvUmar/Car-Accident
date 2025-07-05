@@ -9,11 +9,6 @@
 
 2. Train the model:
    - Use the provided notebook to preprocess data and train an XGBoost model.
-   - Save the model as `xgb_model.pkl` in the project root:
-     ```python
-     import joblib
-     joblib.dump(model, 'xgb_model.pkl')
-     ```
 
 3. Run the FastAPI server:
    ```bash
@@ -24,25 +19,38 @@
 
 - **POST** `/predict`
   - Request body: JSON with required features
-  - Response: `{ "severity": int }`
+  - Response: `{ "severity": int, "error": str, "msg" : str }`
 
 Example request:
 ```json
 {
-  "Calculation1": "value",
-  "City": "value",
-  "Side": "value",
-  "State": "value",
-  "Sunrise_Sunset": "value",
-  "Weather_Condition": "value",
-  "Wind_Direction": "value",
-  "Start_Time": "2023-01-01 12:00:00",
-  "Temperature_F": 70.0,
-  "Visibility_mi": 10.0,
-  "Humidity": 50.0,
-  "Pressure_in": 30.0,
-  "Wind_Speed_mph": 5.0,
-  "Lat": 34.0,
-  "Lng": -118.0
+  "Calculation1": "Remaining",
+  "City": "New York",
+  "Side": "R",
+  "State": "NY",
+  "Wind_Direction": "SE",
+  "Weather_Condition": "Heavy Snow",
+  "Sunrise_Sunset": "Night",
+  "Start_Time": "01/05/2022 06:45:00 AM",
+  "Temperature_F": 20.0,
+  "Visibility_mi": 0.5,
+  "Pressure_in": 28.8,
+  "Wind_Speed_mph": 15.0,
+  "Humidity": 95.0,
+  "Lat": 40.7128,
+  "Lng": -74.0060,
+  "Amenity": true,
+  "Bump": true,
+  "Traffic_Calming": true,
+  "Crossing": true,
+  "Junction": true,
+  "Stop": true,
+  "Traffic_Signal": true,
+  "Give_Way": true,
+  "No_Exit": true,
+  "Railway": true,
+  "Roundabout": true,
+  "Station": true
 }
+
 ``` 
